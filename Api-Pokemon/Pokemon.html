@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/Recursos/Pokebola.png" type="img/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=close" />
+    <link rel="stylesheet" href="style-Api.css">
+    <title>Pokemon</title>
+</head>
+<body id="body">
+
+    <div class="bg-pokeball"></div>
+
+    <div id="main-container">
+
+        <img src="/Recursos/Poke-logo.png" alt="Logo de Pokemon" class="poke-logo">
+
+        <form id="form">
+    
+            <div id="buscar">
+    
+                <label>
+                    Buscar
+                    <input type="text" placeholder="Ingresar nombre" class="input" id="input-buscar">
+                </label>
+                
+    
+            </div>    
+    
+            <div id="limite">
+    
+                <h2>Mostrar pokemon</h2>
+    
+                <label>
+                    Desde:
+                    <input type="number" class="input" id="inicio" min="1" max="1024"
+                    placeholder="Ejm: 1">
+                </label>
+                
+                <label>
+                    Cantidad
+                    <input type="number" class="input"  id="cantidad" min="2" max="1025"  placeholder="Ejm: 20">
+                </label>
+    
+            </div>
+    
+            <button id="button">Ver Pokémon</button>
+        
+        </form>
+        
+        
+        <div id="temporada">
+            <h2 id="seasons">Ver por temporadas <span class="mdi--arrow-bottom-drop-circle-outline"></span></h2> 
+            <ul id="menu">
+                <li class="pokemon-season"><strong>Temporada 1: Kanto </strong><br> Desde: 1 - Cantidad: 151</li>
+                <li class="pokemon-season"><strong>Temporada 2: Johto  </strong><br> Desde: 152 - Cantidad: 100</li>
+                <li class="pokemon-season"><strong>Temporada 3: Hoenn  </strong><br> Desde: 252 - Cantidad: 135</li>
+                <li class="pokemon-season"><strong>Temporada 4: Sinnoh  </strong><br> Desde: 387 - Cantidad: 107</li>
+                <li class="pokemon-season"><strong>Temporada 5: Unova  </strong><br> Desde: 494 - Cantidad: 156</li>
+                <li class="pokemon-season"><strong>Temporada 6: Kalos  </strong><br> Desde: 650 - Cantidad: 72</li>
+                <li class="pokemon-season"><strong>Temporada 7: Alola  </strong><br> Desde: 722 - Cantidad: 88</li>
+                <li class="pokemon-season"><strong>Temporada 8: Galar </strong><br> Desde: 810 - Cantidad: 89</li>
+            </ul>
+        </div>
+    
+    
+        <div id="pokemon-container"></div>
+        <h1 id="alert"> No se encontro ningun pokémon con ese nombre</h1>
+        
+        <div id="modal"></div>
+
+    </div>
+   
+
+</body>
+<script src="script-Api.js" type="module"></script>
+</html>

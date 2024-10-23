@@ -1,0 +1,242 @@
+/*
+*ESTILOS GENERALES
+*/
+
+*, html, body{
+    margin: 0;
+    padding: 0;
+    font-family: Poppins;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-pokeball{
+    position: absolute;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.container{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#img-container{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.img{
+    filter: drop-shadow(5px 5px 5px black);
+    position: absolute;
+    z-index: 1;
+    transition: transform .5s, filter .5s;
+}
+
+.img:hover{
+    transform: scale(1.1);
+    filter: drop-shadow(0 20px 2px black);
+}
+
+/*Esta clase se usara para las pokebolas*/
+.poke-ball{
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    opacity: .4;
+}
+
+/*
+*ESTILOS MOBILE
+*/
+
+#poke-inicio{
+    height: 90%;
+    min-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateY(-50px);
+}
+
+.container .poke-logo{
+    display: block;
+    max-width: 90%;
+    min-width: 300px;
+}
+
+#button{
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #FFCC00;
+    width: 180px;
+    height: 50px;
+    display: flex;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: background .5s, opacity .5s;
+    position: relative;
+    z-index: 3;
+}
+
+#button span{
+    transition: transform .5s;
+}
+
+#button::after{
+    content: ">>";
+    position: absolute;
+    right: 30px;
+    opacity: 0;
+    
+}
+
+#button:hover{
+    background-color: #FFB700;
+}
+
+#button:hover span{
+    transform: translateX(-15px);
+}
+
+#button:hover::after{
+    opacity: 1;
+}
+
+#articuno{
+    bottom: 0;
+    right: 0;
+    opacity: .9;
+    width: 60%;
+    max-width: 300px;
+    height: 50%;
+    max-height: 500px;
+}
+
+.tablet, .desktop{
+    display: none;
+}
+
+
+/*
+*ESTILOS TABLETS
+*/
+@media (min-width: 768px) and (max-width: 1023px){
+
+    .poke-logo{
+        width: 600px;
+        min-width: 50%;
+    }
+
+    .tablet{
+        display: block;
+    }
+
+    .mobile, .desktop{
+        display: none;
+    }
+
+    .img{
+        width: 380px;
+        height: 420px ;
+    }
+    #mew{
+        top: 0;
+        right: 0;
+    }
+
+    #mewtwo{
+        left: 0;
+        bottom: 0;
+        width: 430px;
+        height: 460px;
+    }
+
+}
+
+/*
+*ESTILOS DESKTOPS
+*/
+@media (min-width: 1024px){
+
+    .container{
+        width: 50%;
+        height: 350px;
+    }
+
+    .poke-logo{
+        width: 100%;
+        max-width: 800px;
+    }
+
+    #poke-inicio{
+        height: 100%;
+        max-height: 500px;
+    }
+    .tablet, .mobile{
+        display: none;
+    }
+
+    .desktop{
+        display: block;
+    }
+
+    .img{
+        width: 400px;
+        height: 400px;
+    }
+
+    #giratina{
+        top: 0;
+        left: 0;
+        width: 500px;
+        height: 450px;
+    }
+
+    #arceus{
+        top: 0;
+        right: 0;
+        width: 500px;
+        height: 500px;
+    }
+
+    #palkia{
+        bottom: -100px;
+        right: 0;
+    }
+
+    #dialga{
+        bottom: -100px;
+        left: 0;
+        height: 450px;
+        width: 450px;
+    }
+
+}
