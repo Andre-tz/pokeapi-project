@@ -137,7 +137,7 @@ body{
 }
 
 #temporada h2{
-    font-size: .65rem;
+    font-size: .9rem;
     margin-bottom: 20px;
     cursor: pointer;
     display: inline-block;
@@ -164,7 +164,7 @@ body{
     transform: scaleY(0);
     transition: transform .5s;
     position: absolute;
-    top: 40px;
+    top: 60px;
     position: absolute;
     z-index: 2;
     background-color: rgba(0, 0, 0, .5);
@@ -192,6 +192,54 @@ body{
     background-color: blue;
     color: white;
 }
+
+/*pantalla de carga*/
+
+#loading-container{
+    width: 100%;
+    min-width: 350px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    animation: crecer 4s infinite;
+    transition: opacity .5s ease;
+}
+
+#loading-container.hidden{
+    opacity: 0;
+    display: none;
+}
+
+#loading-container h1{
+    color: white;
+    text-align: center;
+}
+
+@keyframes crecer {
+    0%{
+        width: 80%;
+        height: 300px;
+        font-size: 1rem;
+    }
+    50%{
+        width: 85%;
+        height: 330px;
+        font-size: 1.2rem;
+    }
+    100%{
+        width: 80%;
+        height: 300px;
+        font-size: 1rem;
+    }
+}
+
+#loading-container img{
+    width: 100%;
+    height: 230px;
+}
+
 
 /*contenedor de las card*/
 #pokemon-container{
@@ -513,7 +561,11 @@ body{
     #temporada h2{
         font-size: 1.2rem
     }
+    
 
+    #loading-container img{
+        height: auto;
+    }
 
     #pokemon-container{
         grid-template-columns: 32% 32% 32%;
@@ -587,6 +639,13 @@ body{
         font-size: 1.2rem
     }
 
+    #loading-container{
+        height: 350px;
+    }
+
+    #loading-container img{
+        height: auto;
+    }
 
     #pokemon-container{
         grid-template-columns: 23% 23% 23% 23%;

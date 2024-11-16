@@ -13,24 +13,29 @@
 </head>
 <body id="body">
 
+    <!-- Pantalla dinámica -->
     <div class="bg-pokeball"></div>
 
+    <!-- Contenedor de todo la aplicación -->
     <div id="main-container">
 
+        <!-- Logo -->
         <img src="/Recursos/Poke-logo.png" alt="Logo de Pokemon" class="poke-logo">
 
         <form id="form">
     
+            <!-- Input que busca pókemon por nombre -->
             <div id="buscar">
     
                 <label>
                     Buscar
-                    <input type="text" placeholder="Ingresar nombre" class="input" id="input-buscar">
+                    <input type="text" placeholder="Ingresar nombre" class="input" id="input-buscar" disabled>
                 </label>
                 
     
             </div>    
     
+            <!-- Inputs para mostrar pokemon  por rangos -->
             <div id="limite">
     
                 <h2>Mostrar pokemon</h2>
@@ -48,11 +53,12 @@
     
             </div>
     
+            <!-- Botón que acciona la funcion para mostrar pokemon -->
             <button id="button">Ver Pokémon</button>
         
         </form>
         
-        
+        <!-- Contenedor que me muestra las temporadas -->
         <div id="temporada">
             <h2 id="seasons">Ver por temporadas <span class="mdi--arrow-bottom-drop-circle-outline"></span></h2> 
             <ul id="menu">
@@ -67,10 +73,19 @@
             </ul>
         </div>
     
-    
+        <!-- Contenedor que se mostrará mientras carga las promesas -->
+        <div id="loading-container">
+            <h1>Cargando ....</h1>
+            <img src="/Recursos/pokemons.png" alt="snorlax durmiendo">
+        </div>
+
+        <!-- Aqui se mostraran todas las cards de los pókemon -->
         <div id="pokemon-container"></div>
+
+        <!-- Texto que se mostrará cuando desaparezcan todas las cards -->
         <h1 id="alert"> No se encontro ningun pokémon con ese nombre</h1>
         
+        <!-- Modal para ver mas información de las cartas -->
         <div id="modal"></div>
 
     </div>

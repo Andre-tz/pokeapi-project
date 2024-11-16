@@ -1,5 +1,4 @@
 ///Importando variables y Funciones
-import { background } from "../Principal/script.js";
 import { crearFondo } from "../Principal/script.js";
 
 /*
@@ -17,6 +16,9 @@ const season=document.querySelector("#seasons")
 
 //Obteniendo elemento despegable
 const menu=document.querySelector("#menu")
+
+//Obteniendo el contenedorde carda
+const loading= document.getElementById("loading-container")
 
 //Variable que guarda el modal
 const modal=document.querySelector("#modal")
@@ -48,6 +50,7 @@ let cantidadPokemon=20
 //Funcion obtener datos APi
 function obtenerApi(numInicio, cantidadAMostrar){
 
+    loading.classList.remove("hidden");
 //PETICIÓN A LA POKEAPI
 
 //Haciendo petiticion a la API
@@ -58,6 +61,7 @@ fetch(link)
     .then(data=>{
 
         const pokemonData=data.results;
+
 
         //Esta variable almacena todas las promesas de los detalles de cada pokemon
         const pokemonPromise=pokemonData.map(pokeDato=>{
@@ -100,23 +104,23 @@ fetch(link)
                     }
     
                     pokeInfo["image"]=data.sprites.other["official-artwork"].front_default;
-    
-                    //Usamos una funcion para crear la carta 
-                    let pokemonDetalle=crearCard(pokeInfo)
+
+                            //Usamos una funcion para crear la carta 
+                            let pokemonDetalle=crearCard(pokeInfo)
 
     
-                    pokeList.push(pokemonDetalle)
-                    
-                    let button=pokemonDetalle.children[4]
+                            pokeList.push(pokemonDetalle)
+                        
+                            let button=pokemonDetalle.children[4]
 
-                    buttons.push(button)
+                            buttons.push(button)
 
-                    //Evento para cada boton creado
-                    button.addEventListener("click",()=>{obtenerInfo(pokeInfo)})
+                            //Evento para cada boton creado
+                            button.addEventListener("click",()=>{obtenerInfo(pokeInfo)})
     
                 })
                     
-
+                loading.classList.add("hidden");
 
                 })
                 .catch(error=>console.error("Error", error))
@@ -138,12 +142,14 @@ function cambiarPeticiones(event){
 
     obtenerApi(inicio.value, cantidad.value);
     
+    input.disabled=false; 
     inicio.value="";
     cantidad.value="";
 }
 
 function peticionesTemporada(event){
 
+    input.disabled=false;
     //esta variable obtendra todo el texto de el contenedor que he dado click en minusculas
     let temporada=event.target.textContent.toLowerCase()
 
@@ -223,7 +229,7 @@ function crearCard(pokemon){
 //Funcion buscar Pokemon
 function buscarPokemon(){
 
-    let string= input.value;
+    let string= input.value.toLowerCase();
 
     let containerVacio=true;
 
